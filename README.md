@@ -13,7 +13,7 @@ Porém, existe um desafio: devemos testar o código desenvolvido com o próprio 
 Este framework de teste é adaptado do livro *Test Driven Development: By Example* de Kent Beck.
 O framework de teste será desenvolvido na linguagem Python e pode ser visto como uma prova de conceito ([MVP](https://en.wikipedia.org/wiki/Minimum_viable_product)) do framework padrão de Python [unittest](https://docs.python.org/3/library/unittest.html).
 
-## 1. Introdução
+## Introdução
 
 Frameworks de teste facilitam a escrita, a execução e a geração de relatórios de teste:
 
@@ -60,7 +60,7 @@ As principais classes em um framework de teste no estilo xUnit são:
 - `TestLoader`: Utilizada para criar suítes de teste a partir de casos de casos de teste.
 - `TestRunner`: Orquestra a execução dos testes e fornece relatórios.
 
-## 2. Classe TestCase
+## 1. Classe TestCase
 
 Para criar casos de teste no xUnit, definimos uma classe de teste que estende da classe `TestCase` fornecida pelo framework:
 
@@ -186,7 +186,7 @@ test_c
 tear_down
 ```
 
-## 3. Classe TestResult
+## 2. Classe TestResult
 
 A classe `TestCase` nos permite executar os testes de forma simples, mas não temos nenhuma informação sobre a execução dos testes.
 `TestResult` permite coletar os resultados da execução dos testes.
@@ -293,7 +293,7 @@ Caso ocorra alguma exceção, então coletamos as falhas e os erros:
 Com isso, concluímos o básico do nosso framework de teste, com as versões iniciais da classe `TestCase` e `TestResult`.
 A seguir, iremos começar a testar o código desenvolvido até o momento.
 
-## 4. Testando TestCase
+## 3. Testando TestCase
 
 Como testar o framework de teste?
 
@@ -483,7 +483,7 @@ Observe que o código para executar os testes vai crescer à medida que novos te
 Nas próximas seções, iremos criar as classes `TestSuite`, `TestLoader` e `TestRunner` para simplificar a execução dos testes.
 
 
-## 5. Classe TestSuite
+## 4. Classe TestSuite
 
 `TestSuite` representa uma coleção de casos de testes.
 Por exemplo, com uma suíte de testes, podemos rodar o teste anterior (`TestCaseTest`) da seguinte forma:
@@ -596,7 +596,7 @@ Resultado:
 11 run, 0 failed, 0 error
 ```
 
-## 6. Classes TestLoader e TestRunner
+## 5. Classes TestLoader e TestRunner
 
 Conforme já mencionamos, o código para execução dos testes está se tornando cada vez maior.
 As classes `TestLoader` e `TestRunner` surgem para resolver esse problema.
@@ -723,7 +723,7 @@ Resultado:
 
 Outro ponto importante é que diferentes *runners* podem ser criados (por exemplo, `WebTestRunner`, `JSONTestRunner`, `UITestRunner`, etc.), sem a necessidade de modificar as classes *core* do framework: `TestCase`, `TestSuite` e `TestLoader`.
 
-## 7. Executando Todos os Testes
+## 6. Executando Todos os Testes
 
 Temos a até o momento três classes de teste: `TestCaseTest` (8 testes), `TestSuiteTest` (3 testes) e `TestLoaderTest` (4 testes).
 
@@ -751,7 +751,7 @@ Resultado:
 15 run, 0 failed, 0 error
 ```
 
-## 8. Comandos Assert
+## 7. Comandos Assert
 
 Implementamos até o momento as principais classes do nosso framework de teste: `TestCase`, `TestRunner`, `TestSuite`, `TestLoader` e `TestRunner`.
 Podemos facilmente executar os testes de uma classe que estende `TestCase` e gerar um relatório simples de saída no forma to `X run, Y failed, Z error`.
